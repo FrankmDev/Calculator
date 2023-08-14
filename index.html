@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body id="body">
+    <main>
+      <button id="modeBtn"><ion-icon name="moon"></ion-icon></button>
+      <section class="container">
+        <div class="display">
+          <div class="input">0</div>
+          <br />
+          <div class="output">0</div>
+        </div>
+        <br />
+        <div class="calculator">
+          <button class="btn-number" value="7">7</button>
+          <button class="btn-number" value="8">8</button>
+          <button class="btn-number" value="9">9</button>
+          <button class="btn-op">*</button>
+          <br />
+          <button class="btn-number" value="4">4</button>
+          <button class="btn-number" value="5">5</button>
+          <button class="btn-number" value="6">6</button>
+          <button class="btn-op">&divide;</button>
+          <br />
+          <button class="btn-number" value="1">1</button>
+          <button class="btn-number" value="2">2</button>
+          <button class="btn-number" value="3">3</button>
+          <button class="btn-op">-</button>
+          <br />
+          <button class="btn-reload">C</button>
+          <button class="btn-number">0</button>
+          <button class="btn-equal">=</button>
+          <button class="btn-op">+</button>
+        </div>
+      </section>
+    </main>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>

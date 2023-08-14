@@ -1,0 +1,129 @@
+:root {
+  --main-color: #22252d;
+  --btn-color: #b89ab3;
+  --back-color: #f5f3f3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: var(--back-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Rubik", sans-serif;
+}
+
+.container {
+  font-size: 2.5rem;
+  color: var(--btn-color);
+  border-radius: 30px;
+  background-color: var(--main-color);
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+}
+
+button {
+  font-weight: 600;
+  padding: 2rem;
+  margin: 0.5rem;
+  background-color: #272b33;
+  border: none;
+  border-radius: 10px;
+  color: var(--back-color);
+  font-size: 3.5rem;
+  width: 6.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, outline 5s ease;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--btn-color);
+  padding: 2rem;
+}
+.output {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+.btn-op,
+.btn-equal,
+.btn-reload {
+  color: #b89ab3;
+}
+button:hover,
+button:active {
+  background-color: var(--main-color);
+  outline: #b89ab3 2px solid;
+  transition: all 0.3s;
+}
+#modeBtn {
+  display: flex;
+  color: var(--btn-color);
+  width: fit-content;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  width: fit-content;
+}
+#modeBtn:hover {
+  background-color: var(--btn-color);
+  color: #22252d;
+}
+
+#modeBtn:active {
+  background-color: var(--btn-color);
+}
+/* .dark {
+  body {
+    background-color: #22252d;
+  }
+  .container {
+    background-color: #b89ab3;
+  }
+  .display {
+    background-color: #b89ab3;
+  }
+} */
+.dark {
+  background-color: #22252d;
+}
+
+.dark .container {
+  background-color: #b89ab3;
+  color: #272b33;
+}
+.dark button {
+  background-color: #bda1b8;
+  color: #22252d;
+}
+.dark button:hover {
+  outline: 2px solid #7c5775;
+  transition: all 0s;
+}
+
+.dark .btn-op,
+.dark .btn-equal,
+.dark .btn-reload {
+  color: #272b33;
+}
+.dark .display {
+  background-color: #b89ab3;
+  border-bottom: 2px solid #22252d;
+}
+.dark .modeBtn {
+  background-color: var(--btn-color);
+  color: #22252d;
+}
