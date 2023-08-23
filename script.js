@@ -24,5 +24,8 @@ document.getElementById("modeBtn").addEventListener("click", toggleDarkMode);
 
 // For each para recorrer el event a cada boton
 btnNumbers.forEach(function (btnNumber) {
-  btnNumber.addEventListener("click", function () {});
+  btnNumber.addEventListener("click", function () {
+    let value = btnNumber.textContent;
+    inputDisplay.textContent += value;
+  });
 });
