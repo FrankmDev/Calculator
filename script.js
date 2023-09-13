@@ -17,15 +17,65 @@ function toggleDarkMode() {
     body.classList.add("dark");
   }
 }
-
 document.getElementById("modeBtn").addEventListener("click", toggleDarkMode);
 
 // FUNCTIONALITY
 
-// For each para recorrer el event a cada boton
-btnNumbers.forEach(function (btnNumber) {
+let calc = [];
+let currentNumber = "";
+let currentOperator = "";
+
+btnNumbers.forEach((btnNumber) => {
   btnNumber.addEventListener("click", function () {
-    let value = btnNumber.textContent;
-    inputDisplay.textContent += value;
+    let value = btnNumber.value;
+    currentNumber += value;
+    inputDisplay.textContent = currentNumber;
   });
+});
+
+btnOperators.forEach((btnOperator) => {
+  btnOperator.addEventListener("click", function () {
+    if (currentNumber !== "") {
+      calc.push(parseFloat(currentNumber));
+      currentNumber = "";
+    }
+    currentOperator = btnOperator.textContent;
+  });
+});
+
+btnEqual.addEventListener("click", (e) => {
+  if (currentNumber !== "") {
+    calc.push(parseFloat(currentNumber));
+    currentNumber = "";
+  }
+
+  let result = 0;
+  switch (currentOperator) {
+    case "+":
+      result = calc.reduce((a, b) => a + b, 0);
+      break;
+    case "-":
+      result = calc.reduce((a, b) => a - b);
+      break;
+    case "*":
+      result = calc.reduce((a, b) => a * b, 1);
+      break;
+    case "/":
+      result = calc.reduce((a, b) => a / b).toFixed(4);
+      break;
+    default:
+      result = NaN;
+  }
+  outputDisplay.textContent = result;
+
+  calc = [];
+  currentOperator = "";
+});
+
+btnReload.addEventListener("click", (e) => {
+  calc = [];
+  currentNumber = "";
+  currentOperator = "";
+  inputDisplay.textContent = "0";
+  outputDisplay.textContent = "0";
 });
