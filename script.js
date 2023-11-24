@@ -21,15 +21,21 @@ document.getElementById("modeBtn").addEventListener("click", toggleDarkMode);
 
 // FUNCTIONALITY
 
-let calc = [];
+const calc = [];
 let currentNumber = "";
 let currentOperator = "";
 
 btnNumbers.forEach((btnNumber) => {
   btnNumber.addEventListener("click", function () {
     let value = btnNumber.value;
+    if (inputDisplay.textContent === "0" && value === "0") {
+      return;
+    }
+    if (inputDisplay.textContent === "0") {
+      inputDisplay.textContent = "";
+    }
     currentNumber += value;
-    inputDisplay.textContent = currentNumber;
+    inputDisplay.textContent += value;
   });
 });
 
@@ -40,6 +46,7 @@ btnOperators.forEach((btnOperator) => {
       currentNumber = "";
     }
     currentOperator = btnOperator.textContent;
+    inputDisplay.textContent += " " + currentOperator + " ";
   });
 });
 
@@ -68,12 +75,13 @@ btnEqual.addEventListener("click", (e) => {
   }
   outputDisplay.textContent = result;
 
-  calc = [];
+  calc.length = 0;
   currentOperator = "";
+  currentNumber = result.toString();
 });
 
 btnReload.addEventListener("click", (e) => {
-  calc = [];
+  calc.length = 0;
   currentNumber = "";
   currentOperator = "";
   inputDisplay.textContent = "0";
