@@ -1,7 +1,7 @@
 <h1 align="center">Calculadora con Modo Oscuro</h1>
 
 <p align="center">
-  <img src="https://example.com/your-gif-url.gif" alt="Calculadora con Modo Oscuro Demo">
+  <img src="https://github.com/FrankmDev/Calculator/blob/master/Calculator.gif" />
 </p>
 
 ## Descripción
